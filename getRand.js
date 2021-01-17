@@ -24,11 +24,14 @@ $.getJSON(
     console.log(url);
     var image = data.recipes[0].image;
     console.log(image);
+    
+    var dietTypes = data.recipes[0].diets;
+    console.log(dietTypes);
 
     document.getElementById("recTitle").innerHTML = name;
     document.getElementById("publisher").innerHTML = sourceN;
     document.getElementById("publisher").href = url;
     document.getElementById("recImg").src = image;
-    
+    document.getElementById("mode").innerHTML = "<h2> Nutrition Facts: </h2> <br>" + dietTypes.join("<br>");
   }
 );

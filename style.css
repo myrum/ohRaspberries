@@ -92,10 +92,12 @@ h1 {
 
 .button span:after {
   content: 'in need of a vitamin boost?';
-  position: absolute;
+    text-size: .5px;
+/*   position: absolute; */
   opacity: 0;
   bottom: -10px;
   right: -20px;
+   text-align: right;
   transition: 0.5s;
 }
 
@@ -138,9 +140,9 @@ h1 {
 }
 
 .button-favfood span:after {
-  content: 'fav food';
+  content: 'begin with your favroite fruit';
   
-  position: absolute;
+/*   position: absolute; */
   opacity: 0;
   bottom: -10px;
   right: -20px;
@@ -172,7 +174,7 @@ h1 {
   
 }
 
-.button-imfsr :hover {
+.button-imfsr:hover {
   background-color: #FAC05E; /* yellow*/
   color: white;
 }
@@ -181,14 +183,14 @@ h1 {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  transition: 0.5s;
+  transition: all 0.5s;
   text-size: 40%;
   text-align: center;
 }
 
 .button-imfsr  span:after {
-  content: 'in the mood for something new?';
-  position: absolute;
+  content: 'in search of a new recipe?';
+/*   position: absolute; */
   opacity: 0;
   top: -50px;
   right: 20px;
@@ -198,11 +200,11 @@ h1 {
   
 }
 
-.button-imfsr :hover span {
+.button-imfsr:hover span {
   padding-right: 25px;
 }
 
-.button-imfsr :hover span:after {
+.button-imfsr:hover span:after {
   opacity: 1;
   right: 0;
 }
