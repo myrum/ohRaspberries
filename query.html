@@ -47,7 +47,7 @@
     <script src="getRand.js"></script>
   </head>
 
-  <body id="randomQuery" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -88,6 +88,17 @@
       <img id = "recImg"
           src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
           style="width:400px;height:400px;"/>
+      <br>
+      <button id="tryagain" style="border:none; color:black; margin-top:20px;" onclick="repeat()">
+        Not Satisfied?
+      </button>
+      
+      <script>
+      function repeat() 
+        {
+          location.replace("query.html");
+        }
+      </script>
     </div>
   
     

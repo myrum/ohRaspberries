@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ruthie&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <!-- import jquery bc js is vanilla idk-->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
@@ -31,9 +35,9 @@
       href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap"
       rel="stylesheet"
     />
-    <link 
-          href="https://fonts.googleapis.com/css2?family=Lora&display=swap" 
-          rel="stylesheet"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@1,300&display=swap"
@@ -86,12 +90,17 @@
       <h1 class="headpage-title">Oh Raspberries</h1>
       <!-- buttons for survey
   button for vitamins-->
-      <div class="container-vitamins">
-        <a href="#">
-          <div class="overlay"></div>
-          <span>Click to see more...</span>
-        </a>
-      </div>
+   <a href="#" class="button">
+        <button class="button" style="vertical-align:middle">
+          <span style="font-size: 20px;
+                       padding-left: 80px;
+                       margin-top: 10px;"></span>
+        </button>
+        <img
+          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fpill.png?v=1610841710584"
+          style="width:100px;height:100px;"
+        />
+      </a>
       <!--button for fav food  -->
       <a href="#" class="button-favfood" onclick="func()">
         <button class="button-favfood" style="vertical-align:middle">
@@ -125,8 +134,9 @@
         }
       </script>
 
-      <h1></h1>
-      <p>it takes two to mango</p>
+      <!-- BREAKS TO SEPARATE BUTTONS FROM EMAIL BAR-->
+      <br /><br /><br /><br />
+      <p>we were made for peach other &#8212; subscribe to our newsletter</p>
 
       <form>
         <div class="input-group">
@@ -143,6 +153,17 @@
         </div>
       </form>
     </div>
+    
+    <div>
+      <hr class="horizontal-line-break-top">
+      <h4 style="text-align:center;
+                 display: block;
+                 margin: 0 auto;">
+        it takes two to mango
+      </h4>
+      <hr class="horizontal-line-break-bottom">
+    </div>
+
     <!-- Container (About Section) -->
     <div id="about" class="container-fluid bg-grey">
       <div class="row">
@@ -150,23 +171,33 @@
           <h2>About</h2>
           <br />
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            We here at Oh Raspberries Inc. are <i><strong>date</strong></i
+            >-icated to providing you with the utmost enjoyable experience when
+            searching for delicious recipies to quench your fruit desires.
           </h4>
           <br />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            Founded in 2021 by Claire Oh and Associates, Oh Raspberries has
+            conquered many obstacles and achieved many goals to get where we are
+            today. That will not stop us in stricing to achieve and provide more
+            for our loyal customers.
+            <br />
+            <br />
+            Our company will always continue to emulate the passion Claire Oh
+            always puts forth when taking on new challenges. We hope you enjoy
+            the service we provide here at Oh Raspberries and be on the lookout
+            for our sister company, Oh Broccoli, coming soon!
+            <br />
+            <br />
           </p>
+          <h4>
+            With Appreciation,
+            <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="signature-sign">Oh Raspberries Inc</span>
+          </h4>
+
           <br />
           <a href="#contact">
             <button class="btn btn-default btn-lg in-touch-btn">
@@ -283,12 +314,25 @@
       >
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color:#3A3E3B;
-                                                                                opacity: 0.7;"></li>
-          <li data-target="#myCarousel" data-slide-to="1" style="background-color:#3A3E3B;
-                                                                 opacity: 0.7;"></li>
-          <li data-target="#myCarousel" data-slide-to="2" style="background-color:#3A3E3B;
-                                                                 opacity: 0.7;"></li>
+          <li
+            data-target="#myCarousel"
+            data-slide-to="0"
+            class="active"
+            style="background-color:#3A3E3B;
+                                                                                opacity: 0.7;"
+          ></li>
+          <li
+            data-target="#myCarousel"
+            data-slide-to="1"
+            style="background-color:#3A3E3B;
+                                                                 opacity: 0.7;"
+          ></li>
+          <li
+            data-target="#myCarousel"
+            data-slide-to="2"
+            style="background-color:#3A3E3B;
+                                                                 opacity: 0.7;"
+          ></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -346,10 +390,14 @@
       <h2 class="text-center">CONTACT</h2>
       <div class="row">
         <div class="col-sm-5">
-          <p style="font-variant:small-caps;
+          <p
+            style="font-variant:small-caps;
                     font-family: 'Lora', serif;
                     font-weight: bold;
-                    letter-spacing: 2px;">Contact us</p>
+                    letter-spacing: 2px;"
+          >
+            Contact us
+          </p>
           <p>
             <span class="glyphicon glyphicon-map-marker"></span> California, US
           </p>
@@ -412,11 +460,17 @@
       </a>
       <div>
         <div>
-          <h4>
+          <hr class="horizontal-line-break-top">
+          <h4 style="display: block;
+                     text-align: center;
+                     margin: 0 auto;">
             You hold the kiwi to my heart!
           </h4>
-          <p style="font-family: 'Lora', serif;
-                    letter-spacing: 1px;">
+          <hr class="horizontal-line-break-bottom">
+          <p
+            style="font-family: 'Lora', serif;
+                    letter-spacing: 1px;"
+          >
             <i class="fa fa-copyright"></i>
             2021 Oh Raspberries Inc
           </p>
