@@ -1,51 +1,77 @@
 /* CSS files add styling rules to your content */
-
+/* contact info + values */
 body {
-  font-family: 'Kufam', cursive;
+  font-family: 'Lobster', cursive;
+  font-family: 'Montserrat', sans-serif;
   margin: 2em;
-  background-color: #bcb8b1;
-   margin: 0;
+  background-color: #EBE4F1;
+  margin: 0;
+  
 }
 
+/*1st header; title screen OH RASPBERRIES*/
 h1 {
-  background-color: #f4f3ee;
-  padding: 30px;
+  padding: 120px;
   text-align: left;
-
+  color: #3A3E3B;
+  letter-spacing: 20px;
+  text-transform: uppercase;
 }
 
+.button {
+  background-color: #EBE4F1; /* white*/
+  border: none;
+  color: black;
+  padding: 50px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* ABOUT COMPANY INFO*/
 h2 {
       font-size: 24px;
       text-transform: uppercase;
-      color: #303030;
+      color: #3A3E3B ;
       font-weight: 600;
       margin-bottom: 30px;
   }
+/**/
 h4 {
       font-size: 19px;
       line-height: 1.375em;
       color: #303030;
       font-weight: 400;
       margin-bottom: 30px;
-  }  
+  } 
+
+/**SMOOTHIE LOGO CLASS**/
+.smoothieLogo {
+  height: 50px;
+  width: 50px;
+}
+/*header1 color: title screen OH RASPBERRIES*/
   .jumbotron {
-      background-color: #f4511e;
+      /*background-color: #EBE4F1;*/
+      background-color: #CB5D71; /*reddish*/
       color: #fff;
       padding: 100px 25px;
       font-family: Montserrat, sans-serif;
   }
   .container-fluid {
-      padding: 60px 50px;
+      padding: 50px 50px;
   }
+/* our values and contact information*/
   .bg-grey {
-      background-color: #f6f6f6;
+      background-color: #EBE4F1;
   }
   .logo-small {
-      color: #f4511e;
+      color: #EBE4F1;
       font-size: 50px;
   }
   .logo {
-      color: #f4511e;
+      color: 3A3E3B;
       font-size: 200px;
   }
   .thumbnail {
@@ -60,13 +86,13 @@ h4 {
   }
   .carousel-control.right, .carousel-control.left {
       background-image: none;
-      color: #f4511e;
+      color: #EBE4F1;
   }
   .carousel-indicators li {
-      border-color: #f4511e;
+      border-color: #EBE4F1;
   }
   .carousel-indicators li.active {
-      background-color: #f4511e;
+      background-color: #EBE4F1;
   }
   .item h4 {
       font-size: 19px;
@@ -79,21 +105,24 @@ h4 {
       font-style: normal;
   }
   .panel {
-      border: 1px solid #f4511e; 
+      border: 1px solid #EBE4F1; 
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
+/*change hover color*/
   .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
+/*change hover color*/
   .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
+      border: 1px solid #EBE4F1;
       background-color: #fff !important;
-      color: #f4511e;
+      color: #EBE4F1;
   }
+
   .panel-heading {
       color: #fff !important;
-      background-color: #f4511e !important;
+      background-color: #EBE4F1 !important;
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -116,9 +145,10 @@ h4 {
       background-color: #f4511e;
       color: #fff;
   }
+/*nav bar color*/
   .navbar {
       margin-bottom: 0;
-      background-color: #f4511e;
+      background-color: #CB5D71;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -126,9 +156,12 @@ h4 {
       letter-spacing: 4px;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
+     
   }
+
   .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
+      
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #f4511e !important;
@@ -181,7 +214,7 @@ h4 {
         margin-bottom: 35px;
     }
   }
-@media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
     .logo {
         font-size: 150px;
     }
