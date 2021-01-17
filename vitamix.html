@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VITA MIX ME UP ;)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- import jquery bc js is vanilla idk-->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- PRECONNECT GOOGLE FONT APIS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2FSMOOTHIE.png?v=1610835689084"
+    />
+  </head>
+
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img
+              class="smoothieLogo"
+              src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2FSMOOTHIE.png?v=1610835689084"
+              alt="Italian Trulli"
+            />
+          </a>
+          <!--PHOTO OF SMOOTHIE HERE-->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html#about">ABOUT</a></li>
+            <li><a href="index.html#portfolio">OUR FLAVORITES</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- HEADER FOR THE TITLE-->
+    <div class="jumbotron text-center">
+      <h1 id="title" class="headpage-title">Choose Your Vita-mix-ins!</h1>
+        
+  <div class="dropdown-content" id="alltheranges">
+    <p>Vitamin A</p>
+    <input type="range" id="A" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin C</p>
+    <input type="range" id="C" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin D</p>
+    <input type="range" id="D" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin E</p>
+    <input type="range" id="E" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin K</p>
+    <input type="range" id="K" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin B1</p>
+    <input type="range" id="B1" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin B2</p>
+    <input type="range" id="B2" min="0" max="100" value="0" class ="slider">
+    
+    <p>Vitamin B12</p>
+    <input type="range" id="B12" min="0" max="100" value="0" class ="slider">
+    
+    <button id="fin"
+        style=" border: none; border-radius: 5px; height: 100px; background-color: #FAC05E;
+         font-size: 19px;
+        font: lona;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-top: 10px;" onclick="getThemMins()">
+      Done
+    </button>
+  </div>
+       <script>
+      var A = document.getElementById("A");
+      var Aval = A.value;
+        A.oninput = function() {
+        Aval = this.value;
+}
+        
+      var C = document.getElementById("C");
+      var Cval = C.value;
+         C.oninput = function() {
+        Cval = this.value;
+}
+        
+      var D = document.getElementById("D");
+      var Dval = D.value;
+         D.oninput = function() {
+        Dval = this.value;
+}
+        
+      var E = document.getElementById("E");
+      var Eval = E.value;
+         E.oninput = function() {
+        Eval = this.value;
+}
+        
+      var K = document.getElementById("K");
+      var Kval = K.value;
+         K.oninput = function() {
+        Kval = this.value;
+}
+        
+          var B1 = document.getElementById("B1");
+      var B1val = B1.value;
+         B1.oninput = function() {
+        B1val = this.value;
+         }
+           
+             var B2 = document.getElementById("B2");
+      var B2val = B2.value;
+         B2.oninput = function() {
+        B2val = this.value;
+}
+
+            var B12 = document.getElementById("B12");
+      var B12val = B12.value;
+         B12.oninput = function() {
+        B12val = this.value;
+}
+      
+        function getThemMins()
+        {
+          var arr = ["A", "C", "D", "E", "K", "B1", "B2", "B12"];
+          var vals = [Aval, Cval, Dval, Eval, Kval, B1val, B2val, B12val];
+          var str = "";
+          for (var i = 0; i < 8; i++) {
+            var val = vals[i];
+            console.log(val);
+            if(val > 0 ) {
+               str += "&maxVitamin" + arr[i] + "=" + val;
+            }
+          }
+          console.log(str);
+          $.getJSON(
+            "https://api.spoonacular.com/recipes/findByNutrients?apiKey=bb6aa3b0df794b1a94106eabf9b7eb03" + str + "&number=1",
+            function(res)
+            {
+            console.log(res);
+              document.getElementById("alltheranges").style.display = "none";
+
+              document.getElementById("title").innerHTML = res[0].title;
+              document.getElementById("recImg").src = res[0].image;
+              document.getElementById("recImg").style.visibility = "visible";
+            }
+          
+          );
+        }
+            
+</script>
+      <h2><a href="" id="sourceLink" target="_blank"></a></h2>
+      <img
+        id="recImg"
+        src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
+        style="width:400px;height:400px;visibility:hidden;"
+      />
+    
+    </div>
+  </body>
+</html>

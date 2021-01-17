@@ -79,29 +79,116 @@
     <!-- HEADER FOR THE TITLE-->
     <div class="jumbotron text-center">
       <h1 id="title" class="headpage-title">What's your favorite fruit?</h1>
-
-      <div class="search-btn">
-        <input
-          class="srch"
-          id="search"
-          style="color:white; border: none;"
-          size="50"
-        />
-        <button
-          class=" snh search-button"
-          id="btn"
-          onclick="getrecipe(document.getElementById('search').value)"
-          style="border:none; color:black;"
-        >
-          Search
-        </button>
-      </div>
+        <!--Make sure the form has the autocomplete function switched off:-->
+          <form autocomplete="off" action="/action_page.php">
+          <div class="search-btn">
+          <input class="srch" id="search" style=" border: none;" size="50" />
+            <button class= " snh search-button" id="btn"
+            onclick="getrecipe(document.getElementById('search').value)" style="border:none; color:black;"
+           >
+            Search
+          </button>
+          </div>
+      </form>
       <h2><a href="" id="sourceLink" target="_blank"></a></h2>
       <img
         id="recImg"
         src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
         style="width:400px;height:400px;visibility:hidden;"
       />
+      <br>
+      <button
+        id="nutrifacts"
+        style=" border: none; border-radius: 5px; height: 100px; background-color: #FAC05E;
+         font-size: 19px;
+        font: lona;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-top: 10px;
+        visibility:hidden;"
+      >
+        Show me the money!
+      </button>
+      
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="mode"></p>
+        </div>
+      </div>
+
+      
+      <style>
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          color:black;
+          background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding-top: 5px;
+          border: 1px solid #888;
+          width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          padding-right: 10px;
+          float: right;
+          font-size: 32px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      </style>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("nutrifacts");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      </script>
 
       <script>
         function getsource(id) {
@@ -113,6 +200,8 @@
               console.log(res);
               document.getElementById("sourceLink").innerHTML = res.sourceName;
               document.getElementById("sourceLink").href = res.sourceUrl;
+              document.getElementById("nutrifacts").style.visibility = "visible"; 
+              setModal(res);
             }
           );
         }
@@ -123,6 +212,7 @@
             "https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query=" +
               q +
               "&type=drink",
+            
             function(res) {
               console.log(res);
               document.getElementById("title").innerHTML = res.results[0].title;
@@ -133,6 +223,12 @@
             }
           );
         }
+        
+        function setModal(res) {
+              console.log("hey ho here we gooooo");
+              document.getElementById("modal").innerHTML = "<h2> Nutrition Facts: </h2> <br> Diets supported: <p>" + res.diets.join("<br>") + "</p><br>Health Score:  " + res.healthScore + "<br>Ready in " + res.readyInMinutes + " minutes";
+              
+            }
       </script>
     </div>
   </body>
