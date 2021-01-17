@@ -79,8 +79,6 @@
     <!-- HEADER FOR THE TITLE-->
     <div class="jumbotron text-center">
       <h1 id="title" class="headpage-title">What's your favorite fruit?</h1>
-        <!--Make sure the form has the autocomplete function switched off:-->
-          <form autocomplete="off" action="/action_page.php">
           <div class="search-btn">
           <input class="srch" id="search" style=" border: none;" size="50" />
             <button class= " snh search-button" id="btn"
@@ -89,7 +87,6 @@
             Search
           </button>
           </div>
-      </form>
       <h2><a href="" id="sourceLink" target="_blank"></a></h2>
       <img
         id="recImg"
@@ -226,7 +223,7 @@
         
         function setModal(res) {
               console.log("hey ho here we gooooo");
-              document.getElementById("modal").innerHTML = "<h2> Nutrition Facts: </h2> <br> Diets supported: <p>" + res.diets.join("<br>") + "</p><br>Health Score:  " + res.healthScore + "<br>Ready in " + res.readyInMinutes + " minutes";
+              document.getElementById("mode").innerHTML = "<h2> Nutrition Facts: </h2> <br> Diets supported: <p>" + res.diets.join("<br>") + "</p><br>Health Score:  " + res.healthScore + "<br>Ready in " + res.readyInMinutes + " minutes";
               
             }
       </script>
