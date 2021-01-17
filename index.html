@@ -91,23 +91,33 @@
       <!-- buttons for survey
   button for vitamins-->
    <a href="#" class="button">
-        <button class="button" style="vertical-align:middle">
-          <span style="font-size: 20px;
-                       padding-left: 80px;
-                       margin-top: 10px;"></span>
+        <button class="button" style="vertical-align:middle" onclick="locolavitamix()">
+          <span style="font-size: 18px;
+                       display: block;
+                       margin: 0 auto;
+                       padding-left: 20px;"></span>
         </button>
         <img
-          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fpill.png?v=1610841710584"
+          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fpill.png?v=1610882169099"
           style="width:100px;height:100px;"
         />
       </a>
+      <script>
+        function locolavitamix()
+        {
+          location.replace("vitamix.html");
+        }
+      </script>
       <!--button for fav food  -->
       <a href="#" class="button-favfood" onclick="func()">
         <button class="button-favfood" style="vertical-align:middle">
-          <span></span>
+          <span style="font-size: 18px;
+                       display: block;
+                       margin: 0 auto;
+                       padding-left: 20px;"></span>
         </button>
         <img
-          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fpancake.png?v=1610842579001"
+          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fraspberry.png?v=1610880420915"
           style="width:100px;height:100px;"
         />
       </a>
@@ -120,10 +130,13 @@
       <!--button for random options-->
       <a href="#" class="button-imfsr" onclick="getRand()">
         <button class="button-imfsr" style="vertical-align:middle">
-          <span></span>
+          <span style="font-size: 18px;
+                       display: block;
+                       margin: 0 auto;
+                       padding-left: 20px;"></span>
         </button>
         <img
-          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fquestion.png?v=1610843391897"
+          src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fquestion.png?v=1610882172614"
           style="width:100px;height:100px;"
         />
       </a>
@@ -140,7 +153,7 @@
 
       <form>
         <div class="input-group">
-          <input
+          <input id="loveuEmail"
             type="email"
             class="form-control"
             size="50"
@@ -148,11 +161,99 @@
             required
           />
           <div class="input-group-btn">
-            <button type="button" class="btn btn-danger">Subscribe</button>
+            <button type="button" id="loveu" class="btn btn-danger">Subscribe</button>
           </div>
         </div>
       </form>
     </div>
+    
+    <!--AAAAAHHH MORE MODALS -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="mode"></p>
+        </div>
+      </div>
+
+      <style>
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          color:black;
+          background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 10px;
+          border: 1px solid #888;
+          text-align:center;
+          width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          padding-right: 5px;
+          float: right;
+          font-size: 32px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      </style>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("loveu");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+          $.getJSON("https://api.spoonacular.com/food/jokes/random?apiKey=db254b5cd61744d39a2deebd9c361444",
+                    function(joke) 
+                    {
+                      console.log(joke);
+                      var broma = joke.text;
+                      document.getElementById("mode").innerHTML = broma;
+                    }
+          );
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      </script>
     
     <div>
       <hr class="horizontal-line-break-top">
@@ -464,16 +565,20 @@
           <h4 style="display: block;
                      text-align: center;
                      margin: 0 auto;">
-            You hold the kiwi to my heart!
+            you hold the kiwi to my heart
           </h4>
           <hr class="horizontal-line-break-bottom">
           <p
             style="font-family: 'Lora', serif;
                     letter-spacing: 1px;"
           >
-            <i class="fa fa-copyright"></i>
+            <i class="fa fa-copyright" style="display: inline;
+                                              margin-right: -20px;"></i>
             2021 Oh Raspberries Inc
           </p>
+        </div>
+        <div>
+          <img class="est-logo" src="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2Fest%20logo.png?v=1610885837602" alt="Established Logo">
         </div>
         <span class="fa fa-facebook"></span>
         <span class="fa fa-instagram"></span>

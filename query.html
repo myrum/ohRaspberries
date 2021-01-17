@@ -43,12 +43,11 @@
       href="https://cdn.glitch.com/41411343-8c58-4d70-ab36-3aeb80836249%2FSMOOTHIE.png?v=1610835689084"
     />
     <title>Enjoy! Recipe Generator</title>
-     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="getRand.js"></script>
   </head>
 
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -80,27 +79,126 @@
         </div>
       </div>
     </nav>
-    
-    
+
     <div class="jumbotron text-center">
-        <h1 class="headpage-title" id="recTitle"></h1>
-      <h2><a href="" id="publisher"> </a></h2>
-      <img id = "recImg"
-          src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
-          style="width:400px;height:400px;"/>
-      <br>
-      <button id="tryagain" style="border:none; color:black; margin-top:20px;" onclick="repeat()">
+      <h1 class="headpage-title" id="recTitle"></h1>
+      <h2><a href="" id="publisher" target="_blank"> </a></h2>
+      <img
+        id="recImg"
+        src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
+        style="width:400px;height:400px;"
+      />
+      <br />
+      <button
+        id="nutrifacts"
+        style=" border: none; border-radius: 5px; height: 100px; background-color: #FAC05E;
+         font-size: 19px;
+        font: lona;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-bottom: 10px;"
+      >
+        Show me the money!
+      </button>
+      <button
+        class="btn-new"
+        id="tryagain"
+        style=" border: none; border-radius: 5px; width: 150px; height: 100px; background-color: #FAC05E;
+         font-size: 19px;
+        font: lona;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin: 30px;"
+        onclick="repeat()"
+      >
         Not Satisfied?
       </button>
-      
+
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="mode"></p>
+        </div>
+      </div>
+
+      <style>
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          color: black;
+          background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          padding-right: 10px;
+          float: right;
+          font-size: 32px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      </style>
+
       <script>
-      function repeat() 
-        {
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("nutrifacts");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      </script>
+
+      <script>
+        function repeat() {
           location.replace("query.html");
         }
       </script>
     </div>
-  
-    
   </body>
 </html>
