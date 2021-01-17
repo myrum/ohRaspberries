@@ -45,7 +45,6 @@
   </head>
 
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -77,55 +76,64 @@
         </div>
       </div>
     </nav>
-        <!-- HEADER FOR THE TITLE-->
-        <div class="jumbotron text-center">
-          <h1 id= "title" class="headpage-title">What's your fave fruit?</h1>
+    <!-- HEADER FOR THE TITLE-->
+    <div class="jumbotron text-center">
+      <h1 id="title" class="headpage-title">What's your favorite fruit?</h1>
 
-          <input class="srch" id="search" style="color:black; border:none;" /><button id="btn"
-            onclick="getrecipe(document.getElementById('search').value)" style="border:none; color:black;"
-           >
-            Search
-          </button>
-          <h2><a href="" id="sourceLink"></a></h2>
-          <img id = "recImg" 
-          src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
-          style="width:400px;height:400px;visibility:hidden;"/>
-          
-          
-          
-          <script>
-            function getsource(id) {
-            $.getJSON("https://api.spoonacular.com/recipes/" + id + "/information?apiKey=db254b5cd61744d39a2deebd9c361444",
-                      function(res) 
-                      {
-                        console.log(res);
-                        document.getElementById("sourceLink").innerHTML=res.sourceName;
-                        document.getElementById("sourceLink").href=res.sourceUrl;
-                      }
-                
-              );
+      <div class="search-btn">
+        <input
+          class="srch"
+          id="search"
+          style="color:white; border: none;"
+          size="50"
+        />
+        <button
+          class=" snh search-button"
+          id="btn"
+          onclick="getrecipe(document.getElementById('search').value)"
+          style="border:none; color:black;"
+        >
+          Search
+        </button>
+      </div>
+      <h2><a href="" id="sourceLink" target="_blank"></a></h2>
+      <img
+        id="recImg"
+        src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FGoogle_Images_2015_logo.svg%2F1200px-Google_Images_2015_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGoogle_Images&tbnid=7fEVakcJUgrsmM&vet=12ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ..i&docid=qfPPp-mRFi6Y6M&w=1200&h=412&q=google%20image&ved=2ahUKEwi81-X5jqLuAhUbGDQIHVxLB-QQMygAegUIARDSAQ"
+        style="width:400px;height:400px;visibility:hidden;"
+      />
+
+      <script>
+        function getsource(id) {
+          $.getJSON(
+            "https://api.spoonacular.com/recipes/" +
+              id +
+              "/information?apiKey=db254b5cd61744d39a2deebd9c361444",
+            function(res) {
+              console.log(res);
+              document.getElementById("sourceLink").innerHTML = res.sourceName;
+              document.getElementById("sourceLink").href = res.sourceUrl;
             }
-            
-            
-            function getrecipe(q) {
-              console.log("func called")
-              $.getJSON("https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query=" + q + "&type=drink", 
-                        function(res) 
-                        {
-                          console.log(res);
-                          document.getElementById("search").style.display = "none";
-                          document.getElementById("btn").style.display = "none";
-                          document.getElementById("title").innerHTML = res.results[0].title;
-                          document.getElementById("recImg").src = res.baseUri+res.results[0].image;
-                          document.getElementById("recImg").style.visibility = "visible";
-                          getsource(res.results[0].id);
-                          
-                        }
-                );
+          );
+        }
+
+        function getrecipe(q) {
+          console.log("func called");
+          $.getJSON(
+            "https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query=" +
+              q +
+              "&type=drink",
+            function(res) {
+              console.log(res);
+              document.getElementById("title").innerHTML = res.results[0].title;
+              document.getElementById("recImg").src =
+                res.baseUri + res.results[0].image;
+              document.getElementById("recImg").style.visibility = "visible";
+              getsource(res.results[0].id);
             }
-            
-          </script>
-          
-        </div>
+          );
+        }
+      </script>
+    </div>
   </body>
 </html>
